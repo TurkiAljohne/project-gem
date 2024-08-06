@@ -1,0 +1,152 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #CACEF0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+   
+}
+#ul {
+    list-style-type: none;
+    
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  #li {
+    float: left;
+   
+  }
+  
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color:rgb(59, 57, 178);
+  }
+   
+
+
+
+/*nun*/
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+
+#home {
+    text-align: center;
+}
+/*nun*/
+#group-members {
+    color: white;
+    font-size: 33px;
+    padding: 20px;
+    list-style-type: square;
+}
+/*nun*/
+#contact-us {
+    margin-top: 20px;
+}
+
+#contact-form {
+    text-align: left;
+}
+/*nun*/
+#member-list li {
+   font-size: 30px;
+    margin: 5px;
+    list-style-type: square;
+}
+
+
+
+.photo{
+    width: 1088px;
+    height: 400px;
+    margin-top: 20px;
+    margin-left: 160px;
+
+}
+#video{
+    margin-top: 30px;
+    margin-left: 250px;
+    width :900 ; 
+    ;height :700;
+}
+#form{
+    color:#333C90;
+    margin-top: 150px;
+    font-size: 20px;
+   
+}
+.welcome{
+width: 1400px;
+height: 325px;
+margin-top: 20px;
+margin-left: 5px;
+}
+#cf{
+ font-size: 20px;
+ color: white;
+ margin-left: 100px;
+}
+#fixed{
+    width: 60px;
+    position: fixed;
+    bottom: 10px;
+    right: 2px;
+}
+#calorie-form {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #calorie-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  #calorie-form input, #calorie-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  #calorie-form button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #calorie-form button:hover {
+    background-color: #218838;
+  }
+  
+  #result {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  

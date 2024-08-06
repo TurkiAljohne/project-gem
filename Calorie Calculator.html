@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css_program.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        
+        .container {
+            background-color: #e5dddd;
+           margin-top: 150px;
+           margin-left: 300px;
+            padding: 20px 200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            color: #555;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: center;
+            color: #333;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#calculateButton").click(function() {
+                var weight = parseFloat($("#weight").val());
+                var height = parseFloat($("#height").val());
+                var age = parseInt($("#age").val());
+                var gender = $("input[name='gender']:checked").val();
+                var activityLevel = $("#activityLevel").val();
+
+                if (isNaN(weight) || isNaN(height) || isNaN(age)) {
+                    alert("Please enter valid values.");
+                    return;
+                }
+
+                var bmr;
+                if (gender === "male") {
+                    bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+                } else {
+                    bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+                }
+
+                var calories;
+                switch (activityLevel) {
+                    case "sedentary":
+                        calories = bmr * 1.2;
+                        break;
+                    case "light":
+                        calories = bmr * 1.375;
+                        break;
+                    case "moderate":
+                        calories = bmr * 1.55;
+                        break;
+                    case "active":
+                        calories = bmr * 1.725;
+                        break;
+                    case "veryActive":
+                        calories = bmr * 1.9;
+                        break;
+                    default:
+                        calories = bmr * 1.2;
+                }
+
+                $("#result").text("Daily Caloric Needs: " + calories.toFixed(2) + " calories");
+            });
+        });
+    </script>
+    </head>
+<body>
+    
+    
+    <nav>
+        <ul id="ul">
+            <li id="li"><a href="home.html">Home</a></li>
+            <li id="li"><a href="Calorie Calculator.html">Calorie Calculator</a></li>
+            <li id="li"><a href="Contact us.html">Subscribe</a></li>
+            <li id="li"><a href="Photo.html">Photo</a></li>
+            <li id="li"><a href="Membership.html">Geographical location</a></li>
+            <li id="li"><a href="FITNESS.html">FITNESS</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <h1>Calorie Calculator</h1>
+        <form id="calorieForm">
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" required>
+
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" required>
+
+            <label for="age">Age (years):</label>
+            <input type="number" id="age" required>
+
+            <label>Gender:</label>
+            <input type="radio" name="gender" value="male" required> Male
+            <input type="radio" name="gender" value="female" required> Female
+
+            <label for="activityLevel">Activity Level:</label>
+            <select id="activityLevel" required>
+                <option value="sedentary">Sedentary</option>
+                <option value="light">Light Activity</option>
+                <option value="moderate">Moderate Activity</option>
+                <option value="active">Active</option>
+                <option value="veryActive">Very Active</option>
+            </select>
+
+            <button type="button" id="calculateButton">Calculate</button>
+        </form>
+        <p id="result"></p>
+    </div>
+
+
+</body>
+</html>
